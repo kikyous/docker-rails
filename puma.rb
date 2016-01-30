@@ -1,3 +1,3 @@
 workers 2
 threads 1, 6
-bind "unix:///tmp/sockets/puma.sock"
+bind "unix:///tmp/puma.sock"
