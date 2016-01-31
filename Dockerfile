@@ -12,14 +12,14 @@ RUN gem install foreman
 
 ENV RAILS_ENV production
 
-# Install the latest postgresql lib for pg gem
+# Install app
 WORKDIR /app
 ONBUILD ADD Gemfile /app/Gemfile
 ONBUILD ADD Gemfile.lock /app/Gemfile.lock
 ONBUILD RUN bundle install --without development test
 ONBUILD ADD . /app
 
-# Add default unicorn config
+# Add default puma config
 ADD puma.rb /app/config/puma.rb
 
 # Add default foreman config
