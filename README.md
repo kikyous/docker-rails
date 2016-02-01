@@ -24,3 +24,30 @@ EXPOSE 80
 - ruby 2.3
 - nginx
 - puma
+
+## best practice
+- you have to add `gem 'puma'` to your Gemfile.
+- you can use your own config/puma.rb, but these line is needed.
+
+```
+environment 'production'
+bind "unix:///tmp/puma.sock"
+```
+
+- you can use your own Procfile, but these line is needed.
+
+```
+web: bundle exec puma -C config/puma.rb
+nginx: nginx -c /etc/nginx/nginx.conf
+```
+- use env to set database, for example:
+
+```
+production:
+  adapter: mysql2
+  host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] %>
+  database: <%= ENV['MYSQL_INSTANCE_NAME'] %>
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+```
+
