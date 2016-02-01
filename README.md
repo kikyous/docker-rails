@@ -14,7 +14,7 @@ MAINTAINER someone <someone@gmail.com>
 
 ## push to docker hub
 
-`docker push somewone/my-app`
+`docker push someone/my-app`
 
 ## run it anywhere
 `docker run -i -p 80:80  --name="myapp" someone/my-app`
@@ -49,4 +49,3 @@ production:
   username: <%= ENV['MYSQL_USERNAME'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
 ```
-
