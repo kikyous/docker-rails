@@ -26,4 +26,6 @@ ONBUILD RUN bundle install --without development test
 ONBUILD ADD . /app
 ONBUILD RUN bundle exec rake assets:precompile 
 
+EXPOSE 80
+
 CMD foreman start -f Procfile
