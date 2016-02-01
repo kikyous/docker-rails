@@ -12,17 +12,17 @@ ENV RAILS_ENV production
 # Install foreman
 RUN gem install foreman
 
+# Add default puma config
+ADD puma.rb /app/config/puma.rb
+
+# Add default foreman config
+ADD Procfile /app/Procfile
+
 # Install app
 WORKDIR /app
 ONBUILD ADD Gemfile /app/Gemfile
 ONBUILD ADD Gemfile.lock /app/Gemfile.lock
 ONBUILD RUN bundle install --without development test
 ONBUILD ADD . /app
-
-# Add default puma config
-ADD puma.rb /app/config/puma.rb
-
-# Add default foreman config
-ADD Procfile /app/Procfile
 
 CMD bundle exec rake assets:precompile && foreman start -f Procfile
