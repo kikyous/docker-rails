@@ -24,5 +24,6 @@ ONBUILD ADD Gemfile /app/Gemfile
 ONBUILD ADD Gemfile.lock /app/Gemfile.lock
 ONBUILD RUN bundle install --without development test
 ONBUILD ADD . /app
+ONBUILD RUN bundle exec rake assets:precompile 
 
-CMD bundle exec rake assets:precompile && foreman start -f Procfile
+CMD foreman start -f Procfile
