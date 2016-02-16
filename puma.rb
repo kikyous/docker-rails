@@ -2,6 +2,7 @@ workers 2
 threads 1, 6
 preload_app!
 environment 'production'
+pidfile '/tmp/puma.pid'
 bind "unix:///tmp/puma.sock"
 
 on_worker_boot do
