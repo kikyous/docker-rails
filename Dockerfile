@@ -1,4 +1,4 @@
-FROM ruby:2.3.0
+FROM ruby:2.3.1
 MAINTAINER kikyous <kikyous@163.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends nodejs nginx libmysqlclient-dev && rm -rf /var/lib/apt/lists/* \

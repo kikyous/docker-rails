@@ -1,4 +1,4 @@
-workers 2
+workers ENV['PUMA_WORKERS'].presence || 0
 threads 1, 6
 preload_app!
 environment 'production'
