@@ -4,8 +4,8 @@
 add this Dockerfile to your rails app root
 
 ```
-FROM kikyous/docker-nginx-puma
-MAINTAINER someone <someone@gmail.com>
+FROM kikyous/docker-rails
+MAINTAINER someone <someone@mail.com>
 ```
 
 ## build image

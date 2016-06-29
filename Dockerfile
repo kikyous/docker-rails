@@ -12,8 +12,8 @@ ADD nginx-sites.conf /etc/nginx/sites-enabled/default
 # Install foreman
 RUN gem install foreman
 
-# Add default puma config
-ADD puma.rb /app/config/puma.rb
+# Add default config
+COPY *.rb /app/config/
 
 # Add default foreman config
 ADD Procfile /app/Procfile

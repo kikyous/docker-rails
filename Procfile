@@ -1,2 +1,2 @@
-web: bundle exec puma -C config/puma.rb
+web: bundle exec rails s
 nginx: nginx -c /etc/nginx/nginx.conf
