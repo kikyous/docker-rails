@@ -24,6 +24,6 @@ MAINTAINER someone <someone@mail.com>
 - nginx
 - puma
 
-## best practice
+## notice
 - add `gem 'puma'` to Gemfile if you use puma
 - add `gem 'unicorn-rails'` to Gemfile if you use unicorn
