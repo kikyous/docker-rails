@@ -22,7 +22,6 @@ MAINTAINER someone <someone@mail.com>
 ## what's in it
 - ruby 2.3
 - nginx
-- puma
 
 ## notice
 - add `gem 'puma'` to Gemfile if you use puma
