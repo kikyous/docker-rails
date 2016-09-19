@@ -2,6 +2,7 @@ FROM ruby:2.3.1
 MAINTAINER kikyous <kikyous@163.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends nodejs nginx libmysqlclient-dev && rm -rf /var/lib/apt/lists/* \
+	&& ln -s $(which nodejs) /usr/bin/node && wget https://npmjs.org/install.sh && chmod +x install.sh && ./install.sh \
         && echo "\ndaemon off;" >> /etc/nginx/nginx.conf && chown -R www-data:www-data /var/lib/nginx
 
 ENV RAILS_ENV production
