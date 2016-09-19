@@ -23,6 +23,7 @@ WORKDIR /app
 ONBUILD COPY ["Gemfile", "Gemfile.lock", "/app/"]
 ONBUILD RUN bundle install --without development test --jobs 4
 ONBUILD ADD . /app
+ONBUILD RUN eval $CMD_BEFORE_COMPILE
 ONBUILD RUN bundle exec rake assets:precompile 
 
 EXPOSE 80
