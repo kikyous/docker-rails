@@ -6,6 +6,9 @@ add this Dockerfile to your rails app root
 ```
 FROM kikyous/docker-rails
 MAINTAINER someone <someone@mail.com>
+
+RUN mv secrets.yml.example secrets.yml && mv database.yml.example database.yml \
+      && bundle exec rake assets:precompile
 ```
 
 ## build image
