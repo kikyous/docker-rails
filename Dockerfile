@@ -2,7 +2,7 @@ FROM ruby:2.3.1
 MAINTAINER kikyous <kikyous@163.com>
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
-        && apt-get install -y --no-install-recommends nodejs nginx libmysqlclient-dev && rm -rf /var/lib/apt/lists/* \
+        && apt-get install -y --no-install-recommends nodejs nginx && rm -rf /var/lib/apt/lists/* \
         && echo "\ndaemon off;" >> /etc/nginx/nginx.conf && chown -R www-data:www-data /var/lib/nginx
 
 ENV RAILS_ENV production
