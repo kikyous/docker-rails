@@ -1,7 +1,9 @@
-workers ENV['PUMA_WORKERS'] || 0
-threads 1, 6
+workers ENV.fetch("PUMA_WORKERS") { 0 }.to_i
+threads_count = ENV.fetch("PUMA_MAX_THREADS") { 5 }.to_i
+threads threads_count, threads_count
 preload_app!
-environment 'production'
+environment ENV.fetch("RAILS_ENV") { "development" }
+
 pidfile '/tmp/puma.pid'
 bind "unix:///tmp/run.sock"
 
