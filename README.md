@@ -7,7 +7,7 @@ add this Dockerfile to your rails app root
 FROM kikyous/docker-rails
 MAINTAINER someone <someone@mail.com>
 
-RUN mv secrets.yml.example secrets.yml && mv database.yml.example database.yml \
+RUN mv database.yml.example database.yml \
       && bundle exec rake assets:precompile
 ```
 
@@ -15,6 +15,7 @@ RUN mv secrets.yml.example secrets.yml && mv database.yml.example database.yml \
 - ruby 2.3
 - nginx
 - redis 3.2
+- nodejs and npm
 
 ## Customize Procfile
 - add a *Procfile* to you project root
